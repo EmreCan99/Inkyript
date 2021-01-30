@@ -1,2 +1,2 @@
 # Quotes-App
-A mobile game with quotes puzzles.
+A Unity project mobile game with quote puzzles.
