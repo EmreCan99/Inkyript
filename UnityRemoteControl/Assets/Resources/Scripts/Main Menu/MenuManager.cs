@@ -5,7 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void NewGameBtn()
+    [SerializeField] Animator categoryPanelAnimator;
+
+    public void OpenCategoryPanel()
+    {
+        categoryPanelAnimator.SetBool("IsCategoryOpen", true);
+    }
+
+    public void CloseCategoryPanel()
+    {
+        categoryPanelAnimator.SetBool("IsCategoryOpen", false);
+    }
+
+    public void RandomCategoryBtn()
     {
         GameManager.Instance.NewGame();
     }
