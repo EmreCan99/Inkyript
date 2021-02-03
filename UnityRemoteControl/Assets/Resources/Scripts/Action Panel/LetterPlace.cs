@@ -5,12 +5,20 @@ using UnityEngine.EventSystems;
 
 public class LetterPlace : MonoBehaviour, IDropHandler
 {
+    Vector3 defPosition;
+
+    private void Start()
+    {
+        defPosition = transform.position;
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
-        if (eventData.pointerDrag)
+        if (eventData.pointerDrag != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<ActLetter>().droppedOnSlot = true;
+            eventData.pointerDrag.transform.position = defPosition;
         }
     }
 }
