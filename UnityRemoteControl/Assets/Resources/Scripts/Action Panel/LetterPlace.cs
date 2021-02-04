@@ -19,6 +19,8 @@ public class LetterPlace : MonoBehaviour, IDropHandler
         {
             eventData.pointerDrag.GetComponent<ActLetter>().droppedOnSlot = true;
             eventData.pointerDrag.transform.position = defPosition;
+
+            Debug.Log("Correct letter: " + gameObject.name + ", " + "Dropped letter: " + eventData.pointerDrag.name);
         }
     }
 }
