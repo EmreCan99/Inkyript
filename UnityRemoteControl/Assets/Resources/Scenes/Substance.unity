@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quotesPanel: {fileID: 2102692704}
+  _mainContainer: {fileID: 2016246840}
 --- !u!114 &579325158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +509,7 @@ MonoBehaviour:
       - m_Target: {fileID: 579325157}
         m_TargetAssemblyTypeName: BublePanel, Assembly-CSharp
         m_MethodName: OpenBubblePanel
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -761,6 +762,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 579325153}
+  - {fileID: 2016246841}
   m_Father: {fileID: 1330503502}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -789,11 +791,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511b46c2c6667da4a8f306eff24b3ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MainContainer: {fileID: 2016246840}
   _ActContainerPrefab: {fileID: 133325797123060541, guid: d19f5957f12bd01498c8fac7f6b8c411, type: 3}
   _DragLayoutGroupPrefab: {fileID: 4124854626303121850, guid: ce0e985c3fad79e4282aede8cef053cc, type: 3}
   _DropLayoutGroupPrefab: {fileID: 7356050413038979066, guid: 7273193a34649db40a647b307c252cb8, type: 3}
   _LetterOnActPrefab: {fileID: 8862556423607391369, guid: 59de387bfae64c44a9968aabdab0e791, type: 3}
   _LetterPlacePrefab: {fileID: 512767559276993438, guid: 987fceb6eacca7a4c9047323411fa0f0, type: 3}
+  isPreviewsCreated: 0
   previewsList: []
 --- !u!1 &1094056698
 GameObject:
@@ -1237,6 +1241,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849545006}
   m_CullTransparentMesh: 0
+--- !u!1 &2016246840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016246841}
+  m_Layer: 5
+  m_Name: Main_Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2016246841
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016246840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 971636024}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -103.703705, y: -80.24075}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2102692700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,6 +1370,7 @@ MonoBehaviour:
   _wordPrefab: {fileID: 4335072569264456779, guid: b79a8be738493b3469f4ecccf5c19512, type: 3}
   _rowPrefab: {fileID: 8608827830915061835, guid: 6ad6b29af3783fe40863b81068c3e47d, type: 3}
   ActPanel: {fileID: 971636023}
+  BubblePanel: {fileID: 579325152}
   wordList: []
   wordStringList: []
   isShuffle: 0

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class ActPanel : MonoBehaviour
 {
     [SerializeField]
-    private GameObject 
+    private GameObject
+        _MainContainer,
         _ActContainerPrefab,
         _DragLayoutGroupPrefab, 
         _DropLayoutGroupPrefab, 
@@ -14,22 +15,28 @@ public class ActPanel : MonoBehaviour
         _LetterPlacePrefab;
 
     int lastClickedIndex;   // Cache memory
+    public bool isPreviewsCreated = false;
 
     [SerializeField]
     private List<GameObject> previewsList;
 
     public void initiateAct(List<string> words)
     {
-        foreach (string word in words)
+        if (isPreviewsCreated == false)
         {
-            CreatePreview(word);
+            foreach (string word in words)
+            {
+                CreatePreview(word);
+            }
+            isPreviewsCreated = true;
         }
+        
     }
 
     void CreatePreview(string word)
     {
         // spawn Container
-        GameObject actContainer = Instantiate(_ActContainerPrefab, transform);
+        GameObject actContainer = Instantiate(_ActContainerPrefab, _MainContainer.transform);
         previewsList.Add(actContainer);
 
         // spawn Place Layout Group

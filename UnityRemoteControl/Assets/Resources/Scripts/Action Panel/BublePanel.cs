@@ -5,24 +5,37 @@ using UnityEngine;
 public class BublePanel : MonoBehaviour
 {
     Animator _animator;
-    [SerializeField] QuotesPanel _quotesPanel;
+    [SerializeField] QuotesPanel _quotesPanel; 
+    [SerializeField] GameObject _mainContainer;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
-    public void OpenBubblePanel()
+    public void OpenBubblePanel(int index)
     {
         bool isOpen = _animator.GetBool("isPanelOpen");
         _animator.SetBool("isPanelOpen", !isOpen);
 
-        StartCoroutine(WaitForBubble());
+        CloseMainContainer(isOpen);
+
+        StartCoroutine(WaitForBubble(index));
     }
 
-    IEnumerator WaitForBubble()
+    public void OpenOnlyBubblePanel()
+    {
+        _animator.SetBool("isPanelOpen", true);
+    }
+
+    public void CloseMainContainer(bool isOpen)
+    {
+        _mainContainer.SetActive(!isOpen);
+    }
+
+    IEnumerator WaitForBubble(int index = 0)
     {
         yield return new WaitForSeconds(.3f);
 
-        _quotesPanel.OpenActPanel(0);
+        _quotesPanel.OpenActPanel(index);
     }
 }

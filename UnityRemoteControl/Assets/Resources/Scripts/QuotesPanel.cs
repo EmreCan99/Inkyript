@@ -12,11 +12,12 @@ public class QuotesPanel : MonoBehaviour
 
     [SerializeField]
     private GameObject _characterPrefab, _wordPrefab, _rowPrefab;
-    public GameObject ActPanel;
+    public GameObject ActPanel, BubblePanel;
 
     public List<GameObject> wordList = new List<GameObject>();
     public List<String> wordStringList = new List<String>();    //to send actPanel
     ActPanel actPanel;
+    BublePanel _bubblePanel;
 
     // GameObject features
     private int 
@@ -35,10 +36,16 @@ public class QuotesPanel : MonoBehaviour
 
     void Start()
     {
-        actPanel    = ActPanel.GetComponent<ActPanel>();
+        actPanel = ActPanel.GetComponent<ActPanel>();
         if (actPanel == null)
         {
             Debug.LogError("actPanel is NULL.");
+        }
+
+        _bubblePanel = BubblePanel.GetComponent<BublePanel>();
+        if (_bubblePanel == null)
+        {
+            Debug.LogError("_bubblePnale is NULL.");
         }
     }
 
@@ -101,7 +108,7 @@ public class QuotesPanel : MonoBehaviour
         wordList.Add(wordUI);   // Add the word to a List
 
         //Set button fuction
-        wordUI.GetComponent<Button>().onClick.AddListener(delegate { OpenActPanel(wordList.IndexOf(wordUI)); });
+        wordUI.GetComponent<Button>().onClick.AddListener(delegate { InitialActPanel(wordList.IndexOf(wordUI)); });
 
         //Set spacing(again)
         wordUI.GetComponent<HorizontalLayoutGroup>().spacing = _letterSpacing;
@@ -126,6 +133,20 @@ public class QuotesPanel : MonoBehaviour
                 characterText.fontSize = _characterWidth;
                 characterText.text = i.ToString();
             }
+        }
+    }
+
+    public void InitialActPanel(int index)
+    {
+        if (ActPanel.GetComponent<ActPanel>().isPreviewsCreated == false)
+        {
+            _bubblePanel.OpenBubblePanel(index);
+        }
+        else
+        {
+            OpenActPanel(index);
+            _bubblePanel.OpenOnlyBubblePanel();
+            _bubblePanel.CloseMainContainer(false);     // !false
         }
     }
 
