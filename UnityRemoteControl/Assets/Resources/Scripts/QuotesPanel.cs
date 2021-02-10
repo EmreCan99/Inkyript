@@ -108,7 +108,13 @@ public class QuotesPanel : MonoBehaviour
         wordList.Add(wordUI);   // Add the word to a List
 
         //Set button fuction
-        wordUI.GetComponent<Button>().onClick.AddListener(delegate { InitialActPanel(wordList.IndexOf(wordUI)); });
+        if (word.Length > 1)
+        {
+            wordUI.GetComponent<Button>().onClick.AddListener(delegate { InitialActPanel(wordList.IndexOf(wordUI)); });
+        }
+        else {
+            wordUI.GetComponent<Image>().enabled = true;
+        }
 
         //Set spacing(again)
         wordUI.GetComponent<HorizontalLayoutGroup>().spacing = _letterSpacing;
