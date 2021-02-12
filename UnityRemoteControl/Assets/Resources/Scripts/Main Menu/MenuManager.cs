@@ -45,11 +45,11 @@ public class MenuManager : MonoBehaviour
 
     public void LibraryBtn()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 
     public void AuthorsBtn()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }
