@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PreProcess db;
     public QuoteDB quote;
+    public int category;
 
     private void Awake()
     {
@@ -33,8 +34,9 @@ public class GameManager : MonoBehaviour
         quote = db.quotedb[0];
     }
 
-    public void NewGame()
+    public void NewGame(int categoryIndex)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
+        category = categoryIndex;
     }
 }

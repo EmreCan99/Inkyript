@@ -142,8 +142,6 @@ public class QuotesPanel : MonoBehaviour
         }
     }
 
-    #region Action Panel
-
     public void InitialActPanel(int index)
     {
         if (ActPanel.GetComponent<ActPanel>().isPreviewsCreated == false)
@@ -168,8 +166,6 @@ public class QuotesPanel : MonoBehaviour
 
         actPanel.ActivatePreview(index);
     }
-
-    #endregion
 
     string ShuffleWord(string word)
     {

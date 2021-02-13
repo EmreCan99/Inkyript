@@ -38,18 +38,14 @@ public class MenuManager : MonoBehaviour
         _mainBg.SetActive(true);
     }
 
-    public void RandomCategoryBtn()
-    {
-        GameManager.Instance.NewGame();
-    }
 
     public void LibraryBtn()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 
     public void AuthorsBtn()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 }
