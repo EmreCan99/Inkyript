@@ -159,7 +159,11 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
+<<<<<<< HEAD
   m_BackGroundColor: {r: 0.8117647, g: 0.9019608, b: 0.6313726, a: 0}
+=======
+  m_BackGroundColor: {r: 0.64421505, g: 0.9056604, b: 0.6617795, a: 0}
+>>>>>>> main
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -667,14 +671,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_Color: {r: 0.8862745, g: 0.6666667, b: 0.14509805, a: 1}
+=======
+  m_Color: {r: 0.8862745, g: 0.6667348, b: 0.14357641, a: 1}
+>>>>>>> main
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 3d1a251f152e95344b2c24074ea1dbba, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 49642fca71ee9784f875b0ed0fc41b84, type: 3}
+>>>>>>> main
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
