@@ -464,8 +464,9 @@ GameObject:
   - component: {fileID: 245347937}
   - component: {fileID: 245347936}
   - component: {fileID: 245347935}
+  - component: {fileID: 245347938}
   m_Layer: 5
-  m_Name: Category_box
+  m_Name: ctg_bx_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -584,6 +585,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245347933}
   m_CullTransparentMesh: 0
+--- !u!114 &245347938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245347933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9495f3bfda8b749b330f0f651acf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250663772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,8 +2797,9 @@ GameObject:
   - component: {fileID: 1384384107}
   - component: {fileID: 1384384106}
   - component: {fileID: 1384384105}
+  - component: {fileID: 1384384108}
   m_Layer: 5
-  m_Name: Category_box (3)
+  m_Name: ctg_bx_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2904,6 +2918,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384384103}
   m_CullTransparentMesh: 0
+--- !u!114 &1384384108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384384103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9495f3bfda8b749b330f0f651acf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570615867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,8 +3128,9 @@ GameObject:
   - component: {fileID: 1578285717}
   - component: {fileID: 1578285716}
   - component: {fileID: 1578285715}
+  - component: {fileID: 1578285718}
   m_Layer: 5
-  m_Name: Category_box (2)
+  m_Name: ctg_bx_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3222,6 +3249,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578285713}
   m_CullTransparentMesh: 0
+--- !u!114 &1578285718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578285713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9495f3bfda8b749b330f0f651acf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603154939
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,8 +3273,9 @@ GameObject:
   - component: {fileID: 1603154943}
   - component: {fileID: 1603154942}
   - component: {fileID: 1603154941}
+  - component: {fileID: 1603154944}
   m_Layer: 5
-  m_Name: Category_box (4)
+  m_Name: ctg_bx_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3354,6 +3394,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603154939}
   m_CullTransparentMesh: 0
+--- !u!114 &1603154944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603154939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9495f3bfda8b749b330f0f651acf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1781865546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +3970,7 @@ MonoBehaviour:
   categoryPanelAnimator: {fileID: 898728846}
   _upperPanel: {fileID: 1290662350}
   _mainBg: {fileID: 755425893}
+  _mainCamera: {fileID: 1081035234}
 --- !u!4 &1941940269
 Transform:
   m_ObjectHideFlags: 0
@@ -4354,6 +4407,7 @@ MonoBehaviour:
     author: 
     category: 
     book: 
+  category: 0
 --- !u!4 &2099530832
 Transform:
   m_ObjectHideFlags: 0
@@ -4528,8 +4582,9 @@ GameObject:
   - component: {fileID: 2132931207}
   - component: {fileID: 2132931206}
   - component: {fileID: 2132931205}
+  - component: {fileID: 2132931208}
   m_Layer: 5
-  m_Name: Category_box (5)
+  m_Name: ctg_bx_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4648,6 +4703,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132931203}
   m_CullTransparentMesh: 0
+--- !u!114 &2132931208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132931203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9495f3bfda8b749b330f0f651acf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143431934
 GameObject:
   m_ObjectHideFlags: 0
