@@ -42,6 +42,6 @@ public class QuitPopUp : MonoBehaviour
 
     public void YesBtn()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
