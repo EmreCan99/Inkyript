@@ -45,7 +45,7 @@ public class InterManager : MonoBehaviour
 
         Debug.Log(quote.quote.ToString());
 
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
         GameObject.DontDestroyOnLoad(this.gameObject);
     }
 
