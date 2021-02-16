@@ -152,7 +152,7 @@ public class QuotesPanel : MonoBehaviour
         {
             OpenActPanel(index);
             _bubblePanel.OpenOnlyBubblePanel();
-            _bubblePanel.CloseMainContainer(true);
+            _bubblePanel.CloseMainContainer(false);     // !false
         }
     }
 

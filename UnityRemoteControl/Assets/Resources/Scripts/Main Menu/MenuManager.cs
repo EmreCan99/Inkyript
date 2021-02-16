@@ -6,19 +6,13 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] Animator categoryPanelAnimator;
-    [SerializeField] private GameObject _upperPanel, _mainBg, _mainCamera;
+    [SerializeField] private GameObject _upperPanel, _mainBg;
 
     Animator upperPanelAnimator;
     
     private void Start()
     {
         upperPanelAnimator = _upperPanel.GetComponent<Animator>();
-
-        if (_mainCamera == null)
-        {
-            Debug.Log("Main camera is NULL.");
-        }
-        _mainCamera.GetComponent<Camera>().backgroundColor = new Color(230f / 255f, 230f / 255f, 230f / 255f);
     }
 
     public void OpenCategoryPanel()
@@ -44,6 +38,10 @@ public class MenuManager : MonoBehaviour
         _mainBg.SetActive(true);
     }
 
+    public void RandomCategoryBtn()
+    {
+        GameManager.Instance.NewGame();
+    }
 
     public void LibraryBtn()
     {
