@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame(int categoryIndex)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
         category = categoryIndex;
     }
 }
