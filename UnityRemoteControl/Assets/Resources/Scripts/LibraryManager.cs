@@ -26,7 +26,7 @@ public class LibraryManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 // Load main menu
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
             #endregion
         }
