@@ -19,8 +19,6 @@ public class BublePanel : MonoBehaviour
         isOpen = _animator.GetBool("isPanelOpen");
         _animator.SetBool("isPanelOpen", !isOpen);
 
-        isOpen = _animator.GetBool("isPanelOpen");
-
         CloseMainContainer(!isOpen);
 
         StartCoroutine(WaitForBubble(index));
@@ -33,7 +31,7 @@ public class BublePanel : MonoBehaviour
 
     public void CloseMainContainer(bool isOpen)
     {
-        _mainContainer.SetActive(!isOpen);
+        _mainContainer.SetActive(isOpen);
     }
 
     IEnumerator WaitForBubble(int index = 0)
