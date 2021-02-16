@@ -9,9 +9,8 @@ public class nextBtn : MonoBehaviour
         
     }
 
-    public void LoadInterScene()
+    public void BackButton()
     {
-        SceneManager.LoadScene(1);
 
     }
 }

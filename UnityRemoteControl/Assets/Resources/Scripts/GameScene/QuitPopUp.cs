@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LibraryManager : MonoBehaviour
+public class QuitPopUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -25,11 +24,24 @@ public class LibraryManager : MonoBehaviour
             // Check if Back was pressed this frame
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                // Load main menu
-                SceneManager.LoadScene(0);
+                BackToMain();
             }
-            #endregion
         }
+        #endregion
     }
 
+    public void BackToMain()
+    {
+            this.gameObject.SetActive(true);
+    }
+
+    public void NoBtn()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void YesBtn()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

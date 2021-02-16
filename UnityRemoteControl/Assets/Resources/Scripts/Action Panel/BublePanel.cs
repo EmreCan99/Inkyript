@@ -8,16 +8,18 @@ public class BublePanel : MonoBehaviour
     [SerializeField] QuotesPanel _quotesPanel; 
     [SerializeField] GameObject _mainContainer;
 
+    public bool isOpen;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
     public void OpenBubblePanel(int index)
     {
-        bool isOpen = _animator.GetBool("isPanelOpen");
+        isOpen = _animator.GetBool("isPanelOpen");
         _animator.SetBool("isPanelOpen", !isOpen);
 
-        CloseMainContainer(isOpen);
+        CloseMainContainer(!isOpen);
 
         StartCoroutine(WaitForBubble(index));
     }
@@ -29,7 +31,7 @@ public class BublePanel : MonoBehaviour
 
     public void CloseMainContainer(bool isOpen)
     {
-        _mainContainer.SetActive(!isOpen);
+        _mainContainer.SetActive(isOpen);
     }
 
     IEnumerator WaitForBubble(int index = 0)

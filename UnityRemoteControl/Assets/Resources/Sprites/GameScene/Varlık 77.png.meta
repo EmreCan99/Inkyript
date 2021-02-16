@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:UnityRemoteControl/Assets/Resources/Sprites/GameScene/Varlık 75.png.meta
-guid: 4fd10a2e1316c224fa6e85602d506e91
-=======
-guid: 49642fca71ee9784f875b0ed0fc41b84
->>>>>>> main:UnityRemoteControl/Assets/Resources/Sprites/GameScene/bubblePanelWhite.png.meta
+guid: 3d1a251f152e95344b2c24074ea1dbba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
