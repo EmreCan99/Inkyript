@@ -18,12 +18,13 @@ public class ActLetter : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         _canvas = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
 
-        defaultPosition = GetComponent<RectTransform>().anchoredPosition;
     }
 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        defaultPosition = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
+
         Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
@@ -45,7 +46,7 @@ public class ActLetter : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
         if (!droppedOnSlot)
         {
-            StartCoroutine(WaitForEndOfFrame());
+            //StartCoroutine(WaitForEndOfFrame());
         }
     }
 

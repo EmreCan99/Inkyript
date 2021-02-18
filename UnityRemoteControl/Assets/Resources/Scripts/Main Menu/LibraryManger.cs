@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LibraryManger : MonoBehaviour
 {
-    
+    private void Start()
+    {
+        Camera _mainCamera = Camera.main;
+        _mainCamera.GetComponent<Camera>().backgroundColor = new Color(247f / 255f, 247f / 255f, 247f / 255f);
+
+    }
+
     void Update()
     {
 

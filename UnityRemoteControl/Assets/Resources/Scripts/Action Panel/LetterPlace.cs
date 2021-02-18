@@ -9,16 +9,17 @@ public class LetterPlace : MonoBehaviour, IDropHandler
 
     private void Start()
     {
-        defPosition = transform.position;
+
     }
 
     public void OnDrop(PointerEventData eventData)
     {
+
         Debug.Log("OnDrop");
         if (eventData.pointerDrag != null)
         {
             eventData.pointerDrag.GetComponent<ActLetter>().droppedOnSlot = true;
-            eventData.pointerDrag.transform.position = defPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = this.GetComponent<RectTransform>().anchoredPosition;
 
             Debug.Log("Correct letter: " + gameObject.name + ", " + "Dropped letter: " + eventData.pointerDrag.name);
         }
