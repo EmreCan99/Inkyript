@@ -36,6 +36,12 @@ public class InterManager : MonoBehaviour
             case 4:
                 categoryColor = new Color(202f / 255f, 162f / 255f, 216f / 255f); // Purple
                 break;
+            case 5:
+                categoryColor = new Color(238f / 255f, 262f / 255f, 179f / 255f); // Yellow
+                break;
+            case 6:
+                categoryColor = new Color(150f / 255f, 183f / 255f, 204f / 255f); // ble2
+                break;
             default:
                 Debug.LogError("Wrong color input");
                 break;

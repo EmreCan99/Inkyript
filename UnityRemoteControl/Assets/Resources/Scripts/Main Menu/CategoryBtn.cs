@@ -14,7 +14,7 @@ public class CategoryBtn : MonoBehaviour
             Debug.Log("btn is null.");
         }
 
-        int index = Int32.Parse(this.name.Substring(name.Length - 1));      // Get the last character of string
+        int index = Int32.Parse(this.name.Substring(name.Length - 1));      // Get the ID of button
 
         btn.onClick.AddListener(delegate { btnFunction(index); });
     }

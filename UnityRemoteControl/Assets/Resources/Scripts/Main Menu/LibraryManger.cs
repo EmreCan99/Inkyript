@@ -28,8 +28,8 @@ public class LibraryManger : MonoBehaviour
                 // Load main menu
                 SceneManager.LoadScene(1);
             }
-            #endregion
         }
+        #endregion
 
     }
 }
