@@ -42,6 +42,7 @@ public class QuitPopUp : MonoBehaviour
 
     public void YesBtn()
     {
+        GameManager.Instance.ShowAds();
         SceneManager.LoadScene(1);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,8 +11,10 @@ public class MenuManager : MonoBehaviour
 
     Animator upperPanelAnimator;
     
+  
     private void Start()
     {
+
         upperPanelAnimator = _upperPanel.GetComponent<Animator>();
 
         if (_mainCamera == null)

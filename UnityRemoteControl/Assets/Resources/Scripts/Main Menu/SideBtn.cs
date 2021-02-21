@@ -35,12 +35,28 @@ public class SideBtn : MonoBehaviour
             }
 
         }
-        
-        
-        
+       
         animator.SetBool("isSidePanelOpen", !isOpen);
     }
 
+    private void Update()
+    {
 
-    
+        // Back button
+        #region Android
+
+        // Make sure user is on Android platform
+        if (Application.platform == RuntimePlatform.Android)
+        {
+
+            // Check if Back was pressed this frame
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                animator.SetBool("isSidePanelOpen", false);
+            }
+        }
+        #endregion
+    }
+
+
 }

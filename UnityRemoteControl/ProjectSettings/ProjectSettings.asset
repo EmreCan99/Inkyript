@@ -728,7 +728,7 @@ PlayerSettings:
     Collab: 1
     Game Performance: 0
     Purchasing: 0
-    Unity Ads: 0
+    Unity Ads: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -741,10 +741,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 4e5facc6-abbc-4afd-85f5-ce3f0412b3e1
+  cloudProjectId: 0f55e007-9dc2-46c0-9e81-258aa4100880
   framebufferDepthMemorylessMode: 0
-  projectName: UnityRemoteControl
-  organizationId: cyt_lymphocyte
+  projectName: Inkyript
+  organizationId: monomyth-studios
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

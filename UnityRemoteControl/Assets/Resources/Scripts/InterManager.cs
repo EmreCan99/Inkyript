@@ -18,7 +18,7 @@ public class InterManager : MonoBehaviour
         quote = GameManager.Instance.quote;
         categoryIndex = GameManager.Instance.category;
 
-        // get category colors
+        // Set category colors
         switch (categoryIndex)
         {
             case 0:
