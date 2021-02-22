@@ -51,6 +51,21 @@ public class QuotesPanel : MonoBehaviour
 
     public void Initiate(QuoteDB quote)
     {
+        // Destroy the quote from last session
+        GameObject[] lastRow = GameObject.FindGameObjectsWithTag("Row");
+        if (lastRow != null)
+        {
+            foreach (var row in lastRow)
+            {
+                Destroy(row);
+            }
+        }
+
+        // Delete wordStringList
+        wordStringList.Clear();
+
+
+        // Initiate new quote
         ProcessQuote(quote);
     }
 
@@ -59,6 +74,7 @@ public class QuotesPanel : MonoBehaviour
     {   
         // Spawn the first Row
         GameObject row = Instantiate(_rowPrefab, transform);
+        row.tag = "Row";    // Set tag
         row.GetComponent<HorizontalLayoutGroup>().spacing = _spaceWidth;
         
         char[] charsToTrim = { ',', '.', ' ' };
@@ -84,6 +100,7 @@ public class QuotesPanel : MonoBehaviour
             {
                 // Spawn new Row
                 row = Instantiate(_rowPrefab, transform);
+                row.tag = "Row";    // Set tag
 
                 // Set spacing
                 row.GetComponent<HorizontalLayoutGroup>().spacing = _spaceWidth;
