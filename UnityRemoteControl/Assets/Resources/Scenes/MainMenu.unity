@@ -2470,6 +2470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quotedb: []
+  loveDb: []
+  lifeDb: []
+  philosophyDb: []
+  educationDb: []
+  inspirationalDb: []
+  artDb: []
 --- !u!4 &980268281
 Transform:
   m_ObjectHideFlags: 0
@@ -2803,8 +2809,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.25, y: -377.6}
-  m_SizeDelta: {x: 985.0105, y: 1195.4486}
+  m_AnchoredPosition: {x: 14.25, y: -429.96}
+  m_SizeDelta: {x: 985.0105, y: 1300.078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183722225
 MonoBehaviour:
@@ -5240,7 +5246,6 @@ MonoBehaviour:
     category: 
     book: 
   category: 0
-  loveDb: []
 --- !u!4 &2099530832
 Transform:
   m_ObjectHideFlags: 0

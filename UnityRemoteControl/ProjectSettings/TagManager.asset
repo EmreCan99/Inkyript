@@ -10,6 +10,7 @@ TagManager:
   - QuotesPanel
   - Spawner
   - Database
+  - Row
   layers:
   - Default
   - TransparentFX
