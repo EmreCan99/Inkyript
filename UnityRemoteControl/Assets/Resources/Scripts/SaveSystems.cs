@@ -16,20 +16,25 @@ public static class SaveSystems
         }
     }
 
-    public static void Save(string saveString)
+    public static void Save(string saveString, string folderName)
     {
-        File.AppendAllText(SAVE_FOLDER + "save.txt", saveString + "\n");
+        File.AppendAllText(SAVE_FOLDER + folderName, saveString + "\n");
     }
 
-    public static string Load()
+    public static string[] Load(string folderName)
     {
-        if (File.Exists(SAVE_FOLDER + "s/Save.txt"))
+        if (File.Exists(SAVE_FOLDER + folderName))
         {
-            string saveString = File.ReadAllText(SAVE_FOLDER + "save.txt");
-            return saveString;
+            string saveString = File.ReadAllText(SAVE_FOLDER + folderName);
+
+            Debug.Log("savestring is: " + saveString);
+
+            string[] stringRows = saveString.Split(new char[] { '\n' });
+            return stringRows;
         }
         else
-        {
+        {   
+            Debug.Log("returned NULL from SaveSystems");
             return null;
         }
     }

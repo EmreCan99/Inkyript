@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/Authors.unity
     guid: 22dafb03b6b786b49b819c1ebf85b04b
+  - enabled: 1
+    path: Assets/Resources/Scenes/History.unity
+    guid: c46f04e4793e60340995e85256e3bef9
   m_configObjects: {}

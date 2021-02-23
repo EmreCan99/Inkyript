@@ -57,4 +57,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+
+    public void HistoryBtn()
+    {
+        GameManager.Instance.LoadHistory();
+        SceneManager.LoadScene(6);
+    }
 }

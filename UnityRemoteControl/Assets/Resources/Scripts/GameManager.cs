@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public QuoteDB quote;
     public int category;
 
+    public List<QuoteDB> History = new List<QuoteDB>();
     
 
     private void Awake()
@@ -89,22 +90,33 @@ public class GameManager : MonoBehaviour
 
     public void SaveHistory(QuoteDB quote)
     {
-
         string json = JsonUtility.ToJson(quote);
 
         // Save
-        SaveSystems.Save(json);
+        SaveSystems.Save(json, "History.txt");
+    }
 
-        // Load
-        string saveString = SaveSystems.Load();
+    public void LoadHistory()
+    {
+        string[] saveString = SaveSystems.Load("History.txt");
+        
         if (saveString != null)
         {
-            QuoteDB savedQuote = JsonUtility.FromJson<QuoteDB>(saveString);
+            foreach (var item in saveString)
+            {
+                History.Add(JsonUtility.FromJson<QuoteDB>(item));
+            }
+
+            for (int i = 0; i < History.Count-1; i++)
+            {
+                Debug.Log(History[i].quote);
+            }
         }
         else
         {
-            Debug.Log("saveString is NULL.");
+            Debug.LogError("saveString is NULL");
         }
-
     }
+
+
 }

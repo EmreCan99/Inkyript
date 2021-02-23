@@ -52,7 +52,9 @@ public class InterManager : MonoBehaviour
         Debug.Log(quote.quote.ToString());
 
         SceneManager.LoadScene(3);
+
         GameObject.DontDestroyOnLoad(this.gameObject);
+
     }
 
     // called first
