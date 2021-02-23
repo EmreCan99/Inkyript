@@ -1,0 +1,2 @@
+{"id":"14094","quote":"Be glad while you can.","author":"Lailah Gifty Akita","category":"life\r","book":" Think Great: Be Great!"}
+{"id":"6609","quote":"What's not there is.","author":"Cameron Conaway","category":"philosophy\r","book":" Bonemeal"}
