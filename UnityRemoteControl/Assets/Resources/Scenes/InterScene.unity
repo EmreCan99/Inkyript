@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 179208686}
   m_Layer: 0
   m_Name: Inter_Manager
-  m_TagString: Untagged
+  m_TagString: InterManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d21c6c96ca4254c84d908693706575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quotesPanel: {fileID: 0}
+  quote:
+    id: 
+    quote: 
+    author: 
+    category: 
+    book: 
 --- !u!4 &179208687
 Transform:
   m_ObjectHideFlags: 0

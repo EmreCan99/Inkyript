@@ -38,27 +38,27 @@ public class PreProcess : MonoBehaviour
     {
 
         loveDb = (from item in quotedb
-                  where item.category.ToString() == quotedb[0].category
+                  where item.category.ToString() == "love\r"
                   select item).ToList();
 
         lifeDb = (from item in quotedb
-                  where item.category.ToString() == quotedb[1].category
+                  where item.category.ToString() == "life\r"
                   select item).ToList();
 
         philosophyDb = (from item in quotedb
-                        where item.category.ToString() == quotedb[2].category
+                        where item.category.ToString() == "philosophy\r"
                         select item).ToList();
 
         educationDb = (from item in quotedb
-                       where item.category.ToString() == quotedb[3].category
+                       where item.category.ToString() == "education\r"
                        select item).ToList();
 
         inspirationalDb = (from item in quotedb
-                           where item.category.ToString() == quotedb[4].category
+                           where item.category.ToString() == "inspirational\r"
                            select item).ToList();
 
         artDb = (from item in quotedb
-                  where item.category.ToString() == quotedb[5].category
+                  where item.category.ToString() == "art\r"
                   select item).ToList();
 
     }

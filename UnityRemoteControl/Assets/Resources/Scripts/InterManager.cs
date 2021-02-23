@@ -7,7 +7,7 @@ public class InterManager : MonoBehaviour
 {
     [SerializeField] GameObject quotesPanel;
 
-    QuoteDB quote;
+    public QuoteDB quote;
     int categoryIndex;
     Color categoryColor;
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -21,15 +23,18 @@ public class GameManager : MonoBehaviour
     public QuoteDB quote;
     public int category;
 
+    
 
     private void Awake()
     {
         _instance = this;
+
+        SaveSystems.Init();
     }
+    
 
     private void Start()
     {
-        
     }
 
     public void NewGame(int categoryIndex)
@@ -72,6 +77,7 @@ public class GameManager : MonoBehaviour
         // get current Quote
         quote = selectedDb[0];
 
+
         SceneManager.LoadScene(2);
         category = categoryIndex;
     }
@@ -79,5 +85,26 @@ public class GameManager : MonoBehaviour
     public void ShowAds()
     {
             Ad.DisplayIntersititialAd();
+    }
+
+    public void SaveHistory(QuoteDB quote)
+    {
+
+        string json = JsonUtility.ToJson(quote);
+
+        // Save
+        SaveSystems.Save(json);
+
+        // Load
+        string saveString = SaveSystems.Load();
+        if (saveString != null)
+        {
+            QuoteDB savedQuote = JsonUtility.FromJson<QuoteDB>(saveString);
+        }
+        else
+        {
+            Debug.Log("saveString is NULL.");
+        }
+
     }
 }
