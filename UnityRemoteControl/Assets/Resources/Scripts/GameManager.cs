@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 
 
         // get current Quote
-        quote = selectedDb[0];
+        quote = selectedDb[2];
 
 
         SceneManager.LoadScene(2);
@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
     {
             Ad.DisplayIntersititialAd();
     }
+
+    #region Save and Load
 
     public void SaveHistory(QuoteDB quote)
     {
@@ -102,6 +104,7 @@ public class GameManager : MonoBehaviour
         
         if (saveString != null)
         {
+            // Create History db
             foreach (var item in saveString)
             {
                 History.Add(JsonUtility.FromJson<QuoteDB>(item));
@@ -118,5 +121,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    #endregion
 }
