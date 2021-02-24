@@ -95,12 +95,15 @@ public class GameManager : MonoBehaviour
         string json = JsonUtility.ToJson(quote);
 
         // Save
-        SaveSystems.Save(json, "History.txt");
+        SaveSystems.SaveHistory(json, "History.txt");
+
+        // last quote
+        SaveLastQuote();
     }
 
     public void LoadHistory()
     {
-        string[] saveString = SaveSystems.Load("History.txt");
+        string[] saveString = SaveSystems.LoadHistory("History.txt");
         
         if (saveString != null)
         {
@@ -119,6 +122,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("saveString is NULL");
         }
+    }
+
+    public void SaveLastQuote()
+    {
+        SaveSystems.SaveLast(quote, category);
     }
 
     #endregion
