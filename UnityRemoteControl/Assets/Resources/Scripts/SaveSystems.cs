@@ -5,10 +5,17 @@ using UnityEngine;
 
 public static class SaveSystems 
 {
-    public static readonly string SAVE_FOLDER = Application.dataPath + "/Saves/";
+    public static string SAVE_FOLDER;
 
     public static void Init()
     {
+        
+            // For Androis and IOS
+            SAVE_FOLDER = Application.persistentDataPath + "/Saves/";
+       
+            // for testing on windows
+            //SAVE_FOLDER = Application.dataPath + "/Saves/";
+        
         // Test if save folder exists
         if (!Directory.Exists(SAVE_FOLDER))
         {
