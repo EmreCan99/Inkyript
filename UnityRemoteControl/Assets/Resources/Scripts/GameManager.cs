@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     public int category;
 
     public List<QuoteDB> History = new List<QuoteDB>();
+
+    LastQuote lastItem;
     
 
     private void Awake()
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     public void NewGame(int categoryIndex)
     {
+        LoadLastQuote();
+
         // Random selection
         if (categoryIndex == 0)
         {
@@ -74,15 +79,90 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+        QuoteDB lastItemObj = new QuoteDB(null, null, null, null, null);
+        switch (categoryIndex)
+        {
+            case 1:
+                lastItemObj = lastItem.love;
+                break;
+            case 2:
+                lastItemObj = lastItem.life;
+                break;
+            case 3:
+                lastItemObj = lastItem.philosophy;
+                break;
+            case 4:
+                lastItemObj = lastItem.education;
+                break;
+            case 5:
+                lastItemObj = lastItem.inspirational;
+                break;
+            case 6:
+                lastItemObj = lastItem.art;
+                break;
+            default:
+                break;
+        }
 
-        // get current Quote
-        quote = selectedDb[2];
+        if (lastItemObj.category == null)
+        {
+            Debug.Log("lastItemObj is NULL.");
 
+            // get current Quote
+            quote = selectedDb[0];
+        }
+        else
+        {
+            string Id = "0";
+            // set ID
+            switch (categoryIndex)
+            {
+                case 1:
+                    Id = lastItem.love.id;
+                    break;
+                case 2:
+                    Id = lastItem.life.id;
+                    break;
+                case 3:
+                    Id = lastItem.philosophy.id;
+                    break;
+                case 4:
+                    Id = lastItem.education.id;
+                    break;
+                case 5:
+                    Id = lastItem.inspirational.id;
+                    break;
+                case 6:
+                    Id = lastItem.art.id;
+                    break;
+                default:
+                    break;
+            }
 
+            QuoteDB lastObj = new QuoteDB(null, null, null, null, null);
+
+            foreach (var item in selectedDb)
+            {
+                if (item.id == Id)
+                {
+                    
+                    lastObj = item;
+                }
+            }
+
+            // get the index of the last quote
+            int index = selectedDb.IndexOf(lastObj);
+
+            Debug.Log("index: " + index);
+
+            // get current Quote
+            quote = selectedDb[index + 1];
+        }
+
+        // Load InterScene
         SceneManager.LoadScene(2);
         category = categoryIndex;
     }
-
     public void ShowAds()
     {
             Ad.DisplayIntersititialAd();
@@ -124,9 +204,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SaveLastQuote()
+    void SaveLastQuote()
     {
         SaveSystems.SaveLast(quote, category);
+    }
+
+    public void LoadLastQuote()
+    {
+        lastItem = SaveSystems.LoadLast();
     }
 
     #endregion

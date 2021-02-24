@@ -123,9 +123,29 @@ public static class SaveSystems
             string json = JsonUtility.ToJson(lastItem);
 
             File.WriteAllText(SAVE_FOLDER + folderName, json);
-        }
-        
-
+        }   
     }
 
+    public static LastQuote LoadLast()
+    {
+        string folderName = "LastQuote.txt";
+
+        LastQuote lastItem = new LastQuote();
+        
+        if (File.Exists(SAVE_FOLDER + folderName))
+        {
+            string saveString = File.ReadAllText(SAVE_FOLDER + folderName);
+            
+            lastItem = JsonUtility.FromJson<LastQuote>(saveString);
+
+            return lastItem;
+        }
+        else
+        {
+            Debug.LogError("returned NULL from SaveSystems/LoadLast");
+            return null;
+        }
+
+        
+    }
 }
