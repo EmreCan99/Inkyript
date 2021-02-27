@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HistoryManager : MonoBehaviour
 {
     List<QuoteDB> HistoryDb = new List<QuoteDB>();
-    [SerializeField] GameObject _historyItem;
+    [SerializeField] GameObject _historyItem, _quotePage, _panelPrefab;
 
     void Start()
     {
@@ -37,6 +37,10 @@ public class HistoryManager : MonoBehaviour
 
             _historyItem = GameObject.Instantiate(_historyItem, transform);
 
+            // Set button function
+            _historyItem.GetComponent<Button>().onClick.AddListener(delegate { OpenQuotePage(HistoryDb[i]); });
+
+
             // populate History Item
             Text quote_txt = _historyItem.transform.GetChild(0).GetComponent<Text>();
             quote_txt.text = processedQuote;
@@ -50,5 +54,17 @@ public class HistoryManager : MonoBehaviour
     public void BackBtn()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void OpenQuotePage(QuoteDB quote)
+    { 
+
+        _quotePage.SetActive(true);
+        GameObject _panel = GameObject.Instantiate(_panelPrefab, _quotePage.transform);
+
+
+        _panel.transform.GetChild(0).GetComponent<Text>().text = quote.quote;
+        _panel.transform.GetChild(1).GetComponent<Text>().text = quote.author;
+        _panel.transform.GetChild(2).GetComponent<Text>().text = quote.book;
     }
 }

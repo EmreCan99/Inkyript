@@ -45,6 +45,11 @@ public class GameManager : MonoBehaviour
     {
         LoadLastQuote();
 
+        if (lastItem == null)
+        {
+            lastItem = new LastQuote(null, null, null, null, null, null);
+        }
+
         // Random selection
         if (categoryIndex == 0)
         {
@@ -104,7 +109,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        if (lastItemObj.category == null)
+        if (lastItemObj == null)
         {
             Debug.Log("lastItemObj is NULL.");
 
