@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AuthorsManager : MonoBehaviour
 {
+    [SerializeField] Animator anim;
 
     private void Start()
     {
@@ -30,5 +31,10 @@ public class AuthorsManager : MonoBehaviour
             }
             #endregion
         }
+    }
+
+    public void CloseUpperPanel()
+    {
+        anim.SetBool("CloseUpperPanel", true);
     }
 }
