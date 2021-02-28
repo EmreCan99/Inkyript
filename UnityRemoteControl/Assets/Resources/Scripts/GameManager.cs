@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public int category;
 
     public List<QuoteDB> History = new List<QuoteDB>();
+    public List<QuoteDB> FavoriteDb;
 
     LastQuote lastItem;
     
@@ -217,6 +218,33 @@ public class GameManager : MonoBehaviour
     public void LoadLastQuote()
     {
         lastItem = SaveSystems.LoadLast();
+    }
+
+    public void SaveFavorite(QuoteDB quote)
+    {
+        string json = JsonUtility.ToJson(quote);
+
+        SaveSystems.SaveHistory(json, "Favorite.txt");
+    }
+
+    public void LoadFavorite()
+    {
+        string[] saveString = SaveSystems.LoadHistory("Favorite.txt");
+
+        if (saveString != null)
+        {
+            // Create Favorite db
+            foreach (var item in saveString)
+            {
+                FavoriteDb.Add(JsonUtility.FromJson<QuoteDB>(item));
+            }
+
+        }
+        else
+        {
+            FavoriteDb = null;
+            Debug.LogError("saveString is NULL");
+        }
     }
 
     #endregion
