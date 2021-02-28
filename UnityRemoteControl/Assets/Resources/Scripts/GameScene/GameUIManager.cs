@@ -30,14 +30,15 @@ public class GameUIManager : MonoBehaviour
     void OpenSharePanel()
     {
         sharePanel.SetActive(true);
-        sharePanel.transform.GetChild(0).GetComponent<Text>().text = "\"" + quote.quote + "\"";
-        sharePanel.transform.GetChild(1).GetComponent<Text>().text = quote.author;
-        sharePanel.transform.GetChild(2).GetComponent<Text>().text = quote.book;
+        sharePanel.transform.GetChild(1).GetComponent<Text>().text = "\"" + quote.quote + "\"";
+        sharePanel.transform.GetChild(2).GetComponent<Text>().text = quote.author;
+        sharePanel.transform.GetChild(3).GetComponent<Text>().text = quote.book;
     }
 
     public void SaveFavoriteQuote()
     {
         GameManager.Instance.SaveFavorite(quote);
+        Destroy(sharePanel.transform.GetChild(0).GetComponent<Button>());
     }
 
     public void BackToMain()

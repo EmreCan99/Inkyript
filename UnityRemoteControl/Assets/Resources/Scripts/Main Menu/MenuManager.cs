@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
 
     Animator upperPanelAnimator;
 
-    [SerializeField] GameObject _savedItemPrefab, SavedContent;
+    [SerializeField] GameObject _savedItemPrefab, SavedContent, ItemCounter;
     public List<QuoteDB> FavoriteDb;
 
 
@@ -38,8 +38,12 @@ public class MenuManager : MonoBehaviour
         GameManager.Instance.LoadFavorite();
         FavoriteDb = GameManager.Instance.FavoriteDb;
 
+        ItemCounter.GetComponent<Text>().text = "0 item";
+
+
         if (FavoriteDb != null)
         {
+            ItemCounter.GetComponent<Text>().text = (FavoriteDb.Count - 1).ToString() + " item";
 
             for (int i = 0; i < FavoriteDb.Count-1; i++)
             {
