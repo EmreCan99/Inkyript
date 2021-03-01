@@ -53,6 +53,9 @@ public class SideBtn : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 animator.SetBool("isSidePanelOpen", false);
+
+                bg.SetActive(true);
+                upperPanel.SetActive(true);
             }
         }
         #endregion
