@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] PreProcess db;
+    public static bool isDbCreated
+    {
+        get;
+        set;
+    }
+
     [SerializeField] AdManager Ad;
 
     static int AdCounter = 0;

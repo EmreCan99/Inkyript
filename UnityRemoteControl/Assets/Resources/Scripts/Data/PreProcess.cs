@@ -17,17 +17,27 @@ public class PreProcess : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("1");
+        if (GameManager.isDbCreated == false)
+        {
+            Init();
 
+            Debug.Log("Db.Inıt");
+
+            GameManager.isDbCreated = true;
+        }
+    }
+
+    void Init()
+    {
         TextAsset quoteData = Resources.Load<TextAsset>("Database/budefason");
         string[] data = quoteData.text.Split(new char[] { '\n' });
 
-        quotedb = new QuoteDB[data.Length-2];
+        quotedb = new QuoteDB[data.Length - 2];
 
-        for (int i = 1; i < data.Length-1; i++)
+        for (int i = 1; i < data.Length - 1; i++)
         {
             string[] row = data[i].Split(new char[] { ';' });
-            quotedb[i-1] = new QuoteDB(row[0], row[1], row[2], row[3], row[4]);
+            quotedb[i - 1] = new QuoteDB(row[0], row[1], row[2], row[3], row[4]);
         }
 
         Debug.Log("Preprocess sorun çözüldü");

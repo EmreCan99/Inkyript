@@ -71,7 +71,14 @@ public class QuotesPanel : MonoBehaviour
 
 
     private void ProcessQuote(QuoteDB quote) 
-    {   
+    {
+        // chech if the quote is short
+        if (quote.quote.Length < 35)
+        {
+            this.GetComponent<VerticalLayoutGroup>().padding.top = 500;
+        }
+
+
         // Spawn the first Row
         GameObject row = Instantiate(_rowPrefab, transform);
         row.tag = "Row";    // Set tag
