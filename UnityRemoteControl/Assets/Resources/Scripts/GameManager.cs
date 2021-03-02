@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PreProcess db;
     [SerializeField] AdManager Ad;
 
+    static int AdCounter = 0;
+
     public QuoteDB quote;
     public int category;
 
@@ -171,7 +173,12 @@ public class GameManager : MonoBehaviour
     }
     public void ShowAds()
     {
+        // Show ads in every second call
+        if (AdCounter % 2 == 0)
+        {
             Ad.DisplayIntersititialAd();
+        }
+        AdCounter++;
     }
 
     #region Save and Load
