@@ -5,12 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class AuthorsManager : MonoBehaviour
 {
-    [SerializeField] Animator anim;
+    [SerializeField] GameObject upperPanel;
+    [SerializeField] GameObject Hint;
+    Animator anim;
 
     private void Start()
     {
         Camera _mainCamera = Camera.main;
+        anim = upperPanel.GetComponent<Animator>();
         _mainCamera.GetComponent<Camera>().backgroundColor = new Color(247f / 255f, 247f / 255f, 247f / 255f);
+
+        if (PlayerPrefs.HasKey("isTutorialAuthors") == false)
+        {
+            anim.SetBool("CloseUpperPanel", false);
+        }
+        else
+        {
+            Hint.SetActive(false);
+        }
     }
 
     void Update()
@@ -36,5 +48,15 @@ public class AuthorsManager : MonoBehaviour
     public void CloseUpperPanel()
     {
         anim.SetBool("CloseUpperPanel", true);
+        PlayerPrefs.SetInt("isTutorialAuthors", 0);
+
+        StartCoroutine(DestroyAnimator());
+    }
+
+    IEnumerator DestroyAnimator()
+    {
+        yield return new WaitForSeconds(.6f);
+        Destroy(anim);
+
     }
 }

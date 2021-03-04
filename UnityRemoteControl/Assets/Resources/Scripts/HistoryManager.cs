@@ -54,6 +54,7 @@ public class HistoryManager : MonoBehaviour
     public void BackBtn()
     {
         SceneManager.LoadScene(1);
+        PlayerPrefs.DeleteAll();
     }
 
     void OpenQuotePage(QuoteDB quote)
