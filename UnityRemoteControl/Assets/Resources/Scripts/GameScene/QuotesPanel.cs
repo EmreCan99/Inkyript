@@ -73,7 +73,7 @@ public class QuotesPanel : MonoBehaviour
     private void ProcessQuote(QuoteDB quote) 
     {
         // chech if the quote is short
-        if (quote.quote.Length < 35)
+        if (quote.quote.Length < 30)
         {
             this.GetComponent<VerticalLayoutGroup>().padding.top = 500;
         }
