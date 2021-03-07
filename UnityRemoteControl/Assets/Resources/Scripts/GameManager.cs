@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] PreProcess db;
+    
+    // For PreProcess
     public static bool isDbCreated
     {
         get;
@@ -37,17 +39,18 @@ public class GameManager : MonoBehaviour
 
     LastQuote lastItem;
     
-
     private void Awake()
     {
         _instance = this;
 
         SaveSystems.Init();
+        
     }
     
 
     private void Start()
     {
+
     }
 
     public void NewGame(int categoryIndex)
@@ -168,6 +171,7 @@ public class GameManager : MonoBehaviour
             int index = selectedDb.IndexOf(lastObj);
 
             Debug.Log("index: " + index);
+            Debug.Log("selected db length: " + selectedDb.Count);
 
             // get current Quote
             quote = selectedDb[index + 1];

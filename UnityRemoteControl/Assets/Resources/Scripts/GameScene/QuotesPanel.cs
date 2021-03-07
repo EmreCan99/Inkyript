@@ -132,11 +132,12 @@ public class QuotesPanel : MonoBehaviour
         wordList.Add(wordUI);   // Add the word to a List
 
         //Set button fuction
-        if (word.Length > 1)
+        if (word.Length > 1 || word.Length <= 9 || !word.Contains("'"))
         {
             wordUI.GetComponent<Button>().onClick.AddListener(delegate { InitialActPanel(wordList.IndexOf(wordUI)); });
         }
         else {
+            Debug.LogError("word without btn func");
             wordUI.GetComponent<Image>().enabled = true;
         }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PreProcess : MonoBehaviour
 {
-    public QuoteDB[] quotedb;
+    public  QuoteDB[] quotedb;
 
     public List<QuoteDB> loveDb = new List<QuoteDB>();
     public List<QuoteDB> lifeDb = new List<QuoteDB>();
@@ -17,19 +17,15 @@ public class PreProcess : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.isDbCreated == false)
-        {
             Init();
 
             Debug.Log("Db.Inıt");
 
-            GameManager.isDbCreated = true;
-        }
     }
 
     void Init()
     {
-        TextAsset quoteData = Resources.Load<TextAsset>("Database/budefason");
+        TextAsset quoteData = Resources.Load<TextAsset>("Database/MainDb");
         string[] data = quoteData.text.Split(new char[] { '\n' });
 
         quotedb = new QuoteDB[data.Length - 2];

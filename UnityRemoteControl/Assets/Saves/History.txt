@@ -1,0 +1,5 @@
+{"id":"1237","quote":"Dreams are the language of God.","author":"Paulo Coelho","category":"inspirational\r","book":" The Alchemist"}
+{"id":"6609","quote":"What's not there is.","author":"Cameron Conaway","category":"philosophy\r","book":" Bonemeal"}
+{"id":"14094","quote":"Be glad while you can.","author":"Lailah Gifty Akita","category":"life\r","book":" Think Great: Be Great!"}
+{"id":"16066","quote":"As you grow and develop your talent and skill – you must begin to create a demand for what you possess as a personal brand.","author":"Archibald Marwizi","category":"life\r","book":" Making Success Deliberate"}
+{"id":"29583","quote":"Positivity is good, but positivity that is rooted in God is power","author":"Ngina Otiende","category":"life\r","book":" Navigating Change: Why You Don't Have to Drown"}
