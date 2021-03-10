@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
     public List<QuoteDB> History = new List<QuoteDB>();
     public List<QuoteDB> FavoriteDb;
+    public List<QuoteDB> SpecialsHistory;
+    
 
     LastQuote lastItem;
     
@@ -46,14 +48,28 @@ public class GameManager : MonoBehaviour
         SaveSystems.Init();
         
     }
-    
-
-    private void Start()
-    {
-
-    }
+ 
+    #region New Game
 
     public void NewGame(int categoryIndex)
+    {
+        int random = Random.Range(1, 3);
+        if (random == 1)
+        {
+            NewSpecialQuote();
+            Debug.LogWarning("Special quote");
+        }
+        else
+        {
+            NewNormalQuote(categoryIndex);
+        }
+
+        // Load InterScene
+        SceneManager.LoadScene(2);
+        category = categoryIndex;
+    }
+
+    void NewNormalQuote(int categoryIndex)
     {
         LoadLastQuote();
 
@@ -162,7 +178,7 @@ public class GameManager : MonoBehaviour
             {
                 if (item.id == Id)
                 {
-                    
+
                     lastObj = item;
                 }
             }
@@ -176,11 +192,40 @@ public class GameManager : MonoBehaviour
             // get current Quote
             quote = selectedDb[index + 1];
         }
-
-        // Load InterScene
-        SceneManager.LoadScene(2);
-        category = categoryIndex;
     }
+
+    void NewSpecialQuote()
+    {
+        LoadSpecials();
+
+        List<QuoteDB> SpecialPool = new List<QuoteDB>();
+
+        if (SpecialsHistory == null)
+        {
+            Debug.LogWarning("Special history is NULL");
+            SpecialPool = db.specialDb.ToList();
+        }
+        else
+        {
+            foreach (var item in db.specialDb)
+            {
+                foreach (var i in SpecialsHistory)
+                {
+                    if (item != i)
+                    {
+                        SpecialPool.Add(item);
+                    }
+                }
+            } 
+        }
+
+        int index = Random.Range(0, SpecialPool.Count);
+
+        // Get current quote
+        quote = SpecialPool[index];
+    }
+    #endregion
+
     public void ShowAds()
     {
         // Show ads in every second call
@@ -198,7 +243,15 @@ public class GameManager : MonoBehaviour
         string json = JsonUtility.ToJson(quote);
 
         // Save
-        SaveSystems.SaveHistory(json, "History.txt");
+
+        if (quote.category.ToString() == "Author\r" || quote.category.ToString() == "Book\r")
+        {
+            SaveSystems.SaveHistory(json, "Special.txt");
+        }
+        else
+        {
+            SaveSystems.SaveHistory(json, "History.txt");
+        }
 
         // last quote
         SaveLastQuote();
@@ -260,6 +313,26 @@ public class GameManager : MonoBehaviour
         else
         {
             FavoriteDb = null;
+            Debug.LogError("saveString is NULL");
+        }
+    }
+
+    void LoadSpecials()
+    {
+        string[] saveString = SaveSystems.LoadHistory("Special.txt");
+
+        if (saveString != null)
+        {
+            // Create special history db
+            foreach (var item in saveString)
+            {
+                SpecialsHistory.Add(JsonUtility.FromJson<QuoteDB>(item));
+            }
+
+        }
+        else
+        {
+            SpecialsHistory = null;
             Debug.LogError("saveString is NULL");
         }
     }
