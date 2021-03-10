@@ -7,7 +7,9 @@ using UnityEngine;
 public class PreProcess : MonoBehaviour
 {
     public  QuoteDB[] quotedb;
+    public  QuoteDB[] specialDb;
 
+    // Category lists
     public List<QuoteDB> loveDb = new List<QuoteDB>();
     public List<QuoteDB> lifeDb = new List<QuoteDB>();
     public List<QuoteDB> philosophyDb = new List<QuoteDB>();
@@ -17,9 +19,10 @@ public class PreProcess : MonoBehaviour
 
     void Start()
     {
-            Init();
+        Init();
+        SpecialInit();        
 
-            Debug.Log("Db.Inıt");
+        Debug.Log("Db.Inıt");
 
     }
 
@@ -67,5 +70,19 @@ public class PreProcess : MonoBehaviour
                   where item.category.ToString() == "art\r"
                   select item).ToList();
 
+    }
+
+    void SpecialInit()
+    {
+        TextAsset quoteData = Resources.Load<TextAsset>("Database/SpecialDb");
+        string[] data = quoteData.text.Split(new char[] { '\n' });
+
+        specialDb = new QuoteDB[data.Length - 1];
+
+        for (int i = 0; i < data.Length - 1; i++)
+        {
+            string[] row = data[i].Split(new char[] { ';' });
+            specialDb[i] = new QuoteDB(row[0], row[1], row[2], row[3], row[4]);
+        }
     }
 }
