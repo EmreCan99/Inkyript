@@ -19,14 +19,6 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] PreProcess db;
-    
-    // For PreProcess
-    public static bool isDbCreated
-    {
-        get;
-        set;
-    }
-
     [SerializeField] AdManager Ad;
 
     static int AdCounter = 0;
@@ -66,6 +58,8 @@ public class GameManager : MonoBehaviour
 
         // Load InterScene
         SceneManager.LoadScene(2);
+		
+		// Category label for game scene background
         category = categoryIndex;
     }
 
