@@ -9,8 +9,12 @@ public class AuthorsManager : MonoBehaviour
     [SerializeField] GameObject Hint;
     Animator anim;
 
+    public List<QuoteDB> Authorslist = new List<QuoteDB>();
+
     private void Start()
     {
+        LoadAuthors();
+
         Camera _mainCamera = Camera.main;
         anim = upperPanel.GetComponent<Animator>();
         _mainCamera.GetComponent<Camera>().backgroundColor = new Color(247f / 255f, 247f / 255f, 247f / 255f);
@@ -57,6 +61,28 @@ public class AuthorsManager : MonoBehaviour
     {
         yield return new WaitForSeconds(.6f);
         Destroy(anim);
+    }
 
+    void LoadAuthors()
+    {
+        string[] saveString = SaveSystems.LoadHistory("Special.txt");
+
+        if (saveString != null)
+        {
+            // Create special history db
+            foreach (var item in saveString)
+            {
+                QuoteDB quote = JsonUtility.FromJson<QuoteDB>(item);
+                if (quote.category.ToString() == "Author\r")
+                {
+                    Authorslist.Add(quote);
+                }
+            }
+        }
+        else
+        {
+            Authorslist = null;
+            Debug.LogError("saveString is NULL");
+        }
     }
 }
