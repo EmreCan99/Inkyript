@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour
         // Show ads in every second call
         if (AdCounter % 2 == 0)
         {
-            Ad.DisplayIntersititialAd();
+            //Ad.DisplayIntersititialAd();
         }
         AdCounter++;
     }

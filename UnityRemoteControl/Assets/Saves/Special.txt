@@ -1,0 +1,3 @@
+{"id":"33","quote":"One is loved because one is loved. No reason is needed for loving.","author":"Paulo Coelho","category":"Book\r","book":" The Alchemist"}
+{"id":"900021","quote":"Life is short, break the rules. Forgive quickly, kiss slowly, love truly","author":"Mark Twain","category":"Author\r","book":""}
+{"id":"900015","quote":"I am not what happened to me, I am what I choose to become.","author":"C.G. Jung","category":"Author\r","book":""}

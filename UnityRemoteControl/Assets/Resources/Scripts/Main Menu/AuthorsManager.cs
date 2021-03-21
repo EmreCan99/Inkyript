@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AuthorsManager : MonoBehaviour
 {
-    [SerializeField] GameObject upperPanel;
+    [SerializeField] GameObject upperPanel, Pawns;
     [SerializeField] GameObject Hint;
     Animator anim;
 
@@ -69,7 +69,7 @@ public class AuthorsManager : MonoBehaviour
 
         if (saveString != null)
         {
-            // Create special history db
+            // Create unlocked Authors db
             foreach (var item in saveString)
             {
                 QuoteDB quote = JsonUtility.FromJson<QuoteDB>(item);
@@ -83,6 +83,48 @@ public class AuthorsManager : MonoBehaviour
         {
             Authorslist = null;
             Debug.LogError("saveString is NULL");
+        }
+
+        UnlockAuthors();
+    }
+
+    void UnlockAuthors()
+    {
+        foreach (var item in Authorslist)
+        {
+            switch (item.author)
+            {
+                case "Albert Einstein":
+                    Pawns.transform.GetChild(0).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                    Pawns.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.SetActive(true);
+                    Debug.Log("Albert Einstein unlocked");
+                    break;
+                case "Victor Hugo":
+                    Pawns.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(false);
+                    Pawns.transform.GetChild(0).GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    Debug.Log("Hugo unlocked");
+                    break;
+                case éC.G.Jung
+
+                    Pawns.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                    Pawns.transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+                    Debug.Log("Jung unlocked");
+                    break;
+                case "Stephen King":
+                    Pawns.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
+                    Pawns.transform.GetChild(1).GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    Debug.Log("King unlocked");
+                    break;
+                case "sagan":
+                    break;
+                case "Friedrich Nietzsche":
+                    Pawns.transform.GetChild(2).GetChild(1).GetChild(0).gameObject.SetActive(false);
+                    Pawns.transform.GetChild(2).GetChild(1).GetChild(1).gameObject.SetActive(true);
+                    Debug.Log("Niçe unlocked");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

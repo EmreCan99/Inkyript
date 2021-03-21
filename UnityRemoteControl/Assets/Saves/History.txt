@@ -1,0 +1,3 @@
+{"id":"1243","quote":"It is my toughest time but the greatest.","author":"Lailah Gifty Akita","category":"education\r","book":" Think Great: Be Great!"}
+{"id":"6609","quote":"What's not there is.","author":"Cameron Conaway","category":"philosophy\r","book":" Bonemeal"}
+{"id":"17514","quote":"\"The contrast between the realization of his neglect and the fondness I had for my father was painful\"\".\"","author":"Yangsze Choo","category":"love\r","book":" The Ghost Bride"}
